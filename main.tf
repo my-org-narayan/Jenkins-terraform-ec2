@@ -25,3 +25,10 @@ module "ec2" {
   security_group_id      = module.security_group.security_group_id
   key_name               = module.key_pair.key_name
 }
+module "s3_bucket" {
+  source = "./modules/S3"
+
+  bucket = "my-s3-bucket"
+  #acl    = "private"
+
+  }
